@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= recipe.recipeTitle %></title>
+</head>
+<body>
+    <h1><%= recipe.recipeTitle %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ingredients</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td><%= recipe.ingredients %></td>
+            <td><%= recipe.calories %></td>
+            <td><a href="/recipes/<%= recipe._id %>/edit">Edit</a></td>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipes</title>
+</head>
+<body>
+    <h1>Your Recipes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% recipes.forEach(function(r){ %>
+                <tr>
+                    <td><%= r.recipeTitle %></td>
+                    <td><a href="/recipes/<%= r._id %>">Details</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="recipes/new">Create New Recipe</a>
+</body>
+</html>

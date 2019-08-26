@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit <%= recipe.recipeTitle %></title>
+</head>
+<body>
+    <h1>Edit <%= recipe.recipeTitle %></h1>
+    <form action="/recipes/<%= r._id %>/edit" method="PUT">
+        <label>Recipe name
+            <input type="text" name="recipeTitle">
+        </label><br>
+        <label>Ingredients
+            <input type="text" name="ingredients">
+        </label><br>
+        <input type="submit" value="Save Recipe">
+    </form>
+</body>
+</html>

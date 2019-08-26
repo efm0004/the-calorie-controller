@@ -6,6 +6,16 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>welcome to <%= title %>!</p>
+    <ul class="right">
+        <li>
+        <% if (user) { %>
+          <a href="/logout">Log Out</a>
+          <a href="/recipes">See My Recipes</a>
+        <% } else { %>
+          <a href="/auth/google">Login</a>
+        <% } %>
+        </li>
+      </ul>
   </body>
 </html>
