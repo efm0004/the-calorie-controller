@@ -16,7 +16,13 @@
         </thead>
         <tbody>
             <% recipes.forEach(function(r){ %>
+                
                 <tr>
+                    <td>
+                        <form action="/recipes/<%= r.id %>?_method=DELETE"
+                            id="delete-form" method="POST">
+                            <button type="submit">X</button>
+                    </td>
                     <td><%= r.recipeTitle %></td>
                     <td><a href="/recipes/<%= r._id %>">Details</a></td>
                 </tr>

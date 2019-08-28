@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit <%= recipe.recipeTitle %></h1>
-    <form action="/recipes/<%= r._id %>/edit" method="PUT">
+    <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
         <label>Recipe name
             <input type="text" name="recipeTitle">
         </label><br>
