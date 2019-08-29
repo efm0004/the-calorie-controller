@@ -1,5 +1,13 @@
 var request = require('request');
 const Recipe = require('../models/recipe');
+var { RecipeSearchClient } = require('edamam-api');
+
+const client = new RecipeSearchClient({
+    appId: '124ca29b',
+    appKey: '2ed02cd62b67ddbbb3d36fc8b83cdc0f'
+});
+
+// const rootURL = 'https://api.edamam.com/api/nutrition-details/?app_id=124ca29b&app_key=2ed02cd62b67ddbbb3d36fc8b83cdc0f'
 
 module.exports = {
     index,
@@ -19,7 +27,6 @@ function deleteRecipe(req, res, next) {
 }
 
 //update captures info and replaces/adds in the object
-//this function does not work
 function update(req, res, next) {
     let { recipeTitle, ingredients } = req.body // this is more secure 
     Recipe.findByIdAndUpdate(req.params.id, {   
@@ -31,13 +38,6 @@ function update(req, res, next) {
     });
 }
 
-// function update(req, res) {
-//     Recipe.findByIdAndUpdate(req.params.id, req.body, (updatedRecipe) => {
-//         console.log(req.params.id, req.body, 'this is the recipe i am updating, yes?')
-//         res.redirect('/recipes/show')
-//     } )
-// }
-
 //edit renders on the page
 function edit(req, res, next) {
     Recipe.findById(req.params.id, function(err, recipe){
@@ -46,11 +46,41 @@ function edit(req, res, next) {
     })
 };
 
+
+//npm i edamam first attempt - need Shazahd/Chris/Andrew help, does nothing
+//may need to move this functionality to the create function instead
+// function show(req, res, next){
+//     Recipe.findById(req.params.id, function(err, recipe){
+//         let results = client.search({query: 'egg'})
+//         res.render('recipes/show', {recipe, results});
+//     })
+// }
+
+// original basic show function - in case API doesn't work
 function show(req, res, next){
     Recipe.findById(req.params.id, function(err, recipe){
         res.render('recipes/show', {recipe});
     })
 }
+
+//first attempt at API w/out npm install
+// function show(req, res, next){
+//     Recipe.findById(req.params.id, function(err, recipe){
+//         let options = {
+//             url: rootURL,
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: {
+//                 ingr: ['egg']
+//             }
+//         }
+//         request.post(options, function(err, response){
+//             console.log(response);
+//             res.render('recipes/show', {recipe, data: response}); 
+//         });
+//     })
+// }
 
 function create(req, res, next){
     for (let key in req.body){

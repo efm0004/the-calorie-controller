@@ -8,16 +8,19 @@
 </head>
 <body>
     <h1>Your Recipes</h1>
+    <hr>
     <table>
         <thead>
             <tr>
-                <th>Name</th>
+                <th></th>
+                <th>Recipe Name</th>
             </tr>
         </thead>
         <tbody>
             <% recipes.forEach(function(r){ %>
                 
-                <tr>
+                <tr> 
+                    <!-- delete button will only delete top item no matter which you press -->
                     <td>
                         <form action="/recipes/<%= r.id %>?_method=DELETE"
                             id="delete-form" method="POST">
@@ -29,6 +32,7 @@
             <% }); %>
         </tbody>
     </table>
+    <hr>
     <a href="recipes/new">Create New Recipe</a>
 </body>
 </html>

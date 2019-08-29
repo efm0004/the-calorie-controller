@@ -7,7 +7,7 @@
     <title>Edit <%= recipe.recipeTitle %></title>
 </head>
 <body>
-    <h1>Edit <%= recipe.recipeTitle %></h1>
+    <h1><%= recipe.recipeTitle %></h1>
    
     <table>
         <thead>
@@ -22,5 +22,7 @@
             <td><a href="/recipes/<%= recipe._id %>/edit">Edit</a></td>
         </tbody>
     </table>
+    <hr>
+    <a href="/recipes">Return to list</a>
 </body>
 </html>
