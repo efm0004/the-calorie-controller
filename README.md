@@ -12,16 +12,12 @@
 HTML, CSS, Javascript, Node, Express, MongoDB, Mongoose
 
 ### Getting started
-[https://the-calorie-controller.herokuapp.com/]
+https://the-calorie-controller.herokuapp.com/
 
 ### Next Steps
 - Extra functionality: adding all calories together in a recipe
-- Add notes for recipes
+- Add notes for recipes for directions and such
 - Add styling - buttons, nav bar, colors
 - Add mobile functionality
 - Incorporating API that analyzes the recipe for you
 - Upload pictures
-
-
-Implement basic authorization
-- OAuth, SEI students
