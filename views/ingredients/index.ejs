@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Your Ingredients</title>
+</head>
+<body>
+    <h1>Your Ingredients</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% ingredients.forEach(function(i){ %> 
+                <tr>
+                    <td><%= i.ingredientName %></td>
+                    <td><%= i.ingredientCalories %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <hr>
+    <h3>New Ingredient</h3>
+    <hr>
+    <form action="/ingredients" method="POST">
+        <label>Name
+            <input type="text" name="ingredientName">
+        </label><br>
+        <label>Calories
+            <input type="text" name="ingredientCalories">
+        </label><br>
+        <hr>
+        <input type="submit" value="Add Ingredient">
+    </form>
+</body>
+</html>

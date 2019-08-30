@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit <%= recipe.recipeTitle %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= recipe.recipeTitle %></title>
 </head>
 <body>
+<section>
     <h1><%= recipe.recipeTitle %></h1>
-   
-    <table>
-        <thead>
-            <tr>
-                <th>Ingredients</th>
-                <th>Calories</th>
-            </tr>
-        </thead>
-        <tbody>
-            <td><%= recipe.ingredients %></td>
-            <td><%= recipe.calories %></td>
-            <td><a href="/recipes/<%= recipe._id %>/edit">Edit</a></td>
-        </tbody>
-    </table>
+    <h3>Ingredients</h3>
+    <ul>
+            <%- recipe.ingredientsRecipe.map(i => 
+            `<li>${i.ingredientName} <small>${i.ingredientCalories}</small></li>`
+          ).join('') %>
+    </ul>
     <hr>
-    <a href="/recipes">Return to list</a>
+    <a href="/recipes">Return to list</a><br>
+    <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
+</section>
+<hr>
+<section>
+        <form action="/ingredients/<%= recipe._id%>/ingredients" method="POST">
+            <select name="ingredientName">
+              <%- ingredients.map(i => `<option value="${i._id}">${i.ingredientName}</option>`).join('') %>
+            </select>
+            <button type="submit">Add to Recipe</button>
+          </form>
+</section>
 </body>
 </html>

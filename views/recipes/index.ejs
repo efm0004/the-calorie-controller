@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Recipes</title>
 </head>
 <body>
@@ -17,14 +18,13 @@
             </tr>
         </thead>
         <tbody>
-            <% recipes.forEach(function(r){ %>
-                
+            <% recipes.forEach(function(r){ %> 
                 <tr> 
-                    <!-- delete button will only delete top item no matter which you press -->
                     <td>
-                        <form action="/recipes/<%= r.id %>?_method=DELETE"
+                        <form action="/recipes/<%= r._id %>?_method=DELETE"
                             id="delete-form" method="POST">
                             <button type="submit">X</button>
+                        </form>
                     </td>
                     <td><%= r.recipeTitle %></td>
                     <td><a href="/recipes/<%= r._id %>">Details</a></td>
@@ -34,5 +34,7 @@
     </table>
     <hr>
     <a href="recipes/new">Create New Recipe</a>
+    <hr>
+    <a href="/ingredients">See Ingredients</a>
 </body>
 </html>

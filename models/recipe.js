@@ -1,17 +1,17 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+
 var recipeSchema = new Schema({
     recipeTitle: {
-        type: String
+        type: String,
+        required: true
     },
-    ingredients: {
-        type: String
-    },
-    calories: {
-        type: Number
-    } 
-}, {
+    ingredientsRecipe: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Ingredient'
+    }]
+    }, {
     timestamps: true
 });
 
