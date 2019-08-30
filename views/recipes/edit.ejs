@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit <%= recipe.recipeTitle %></title>
+    <title>edit <%= recipe.recipeTitle %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>Edit <%= recipe.recipeTitle %></h1>
+    <h1>edit <%= recipe.recipeTitle %></h1>
     <hr>
     <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-        <label>Recipe name
+        <label>recipe name
             <input type="text" name="recipeTitle">
         </label><br>
         <hr>
-        <input type="submit" value="Save Recipe">
+        <input type="submit" value="save recipe">
     </form>
 </body>
 </html>

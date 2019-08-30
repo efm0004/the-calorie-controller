@@ -10,14 +10,14 @@
 <body>
 <section>
     <h1><%= recipe.recipeTitle %></h1>
-    <h3>Ingredients</h3>
+    <h3>ingredients - calories</h3>
     <ul>
             <%- recipe.ingredientsRecipe.map(i => 
             `<li>${i.ingredientName} <small>${i.ingredientCalories}</small></li>`
           ).join('') %>
     </ul>
     <hr>
-    <a href="/recipes">Return to list</a><br>
+    <a href="/recipes">return to list</a><br>
     <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
 </section>
 <hr>
@@ -26,7 +26,7 @@
             <select name="ingredientName">
               <%- ingredients.map(i => `<option value="${i._id}">${i.ingredientName}</option>`).join('') %>
             </select>
-            <button type="submit">Add to Recipe</button>
+            <button type="submit">add to recipe</button>
           </form>
 </section>
 </body>
