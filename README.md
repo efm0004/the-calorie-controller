@@ -2,11 +2,11 @@
 ... is a app that allows you to sign in, input ingredients and their calories, and create recipes based off of the ingredients you have inputted. 
 
 ### Screenshots
-(https://i.imgur.com/6fGRC8E.png)
-(https://i.imgur.com/VrPOrsL.png)
-(https://i.imgur.com/KPSOwZR.png)
-(https://i.imgur.com/xYyo5JL.png)
-(https://i.imgur.com/cXtoYse.png)
+![1](https://i.imgur.com/6fGRC8E.png)
+![2](https://i.imgur.com/VrPOrsL.png)
+![3](https://i.imgur.com/KPSOwZR.png)
+![4](https://i.imgur.com/xYyo5JL.png)
+![5](https://i.imgur.com/cXtoYse.png)
 
 ### Technologies Used
 HTML, CSS, Javascript, Node, Express, MongoDB, Mongoose
